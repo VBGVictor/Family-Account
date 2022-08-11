@@ -1,9 +1,9 @@
 package com.FAccount.repository;
 
-import javax.persistence.Id;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface userRepository extends JpaRepository<Long, Id> {
+import com.FAccount.model.User;
+
+public interface userRepository extends JpaRepository<User, Long> {
 
 }

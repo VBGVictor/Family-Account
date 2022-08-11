@@ -1,9 +1,9 @@
 package com.FAccount.repository;
 
-import javax.persistence.Id;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface kinshipRepository extends JpaRepository<Long, Id> {
+import com.FAccount.model.Kinship;
+
+public interface kinshipRepository extends JpaRepository<Kinship, Long> {
 
 }
