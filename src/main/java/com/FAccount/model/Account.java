@@ -10,27 +10,27 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Account")
+@Table(name="tb_account")
 public class Account {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID", nullable=false, length=30)
+	@Column(name="account_id")
 	private Long id;
 	
-	@Column(name="Bank", nullable=false, length=30)
+	@Column(name="account_bank")
 	private String bank;
 	
-	@Column(name="Number Account", nullable=false, length=30)
+	@Column(name="account_numberAccount")
 	private Integer numberAccount;
 	
-	@Column(name="Digit", nullable=false, length=1)
+	@Column(name="account_digit")
 	private Integer digitAccount;
 	
-	@Column(name="Agency", nullable=false, length=10)
+	@Column(name="account_agency")
 	private Integer agency;
 	
-	@Column(name="Number Bank", nullable=false, length=5)
+	@Column(name="account_numberBank")
 	private Integer numberBank;
 	
 	public Account() {

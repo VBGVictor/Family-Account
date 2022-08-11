@@ -15,7 +15,7 @@ public class Broker {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID", nullable=false, length=30)
+	@Column(name="ID")
 	private Long id;
 	
 	private String BTGPactual;

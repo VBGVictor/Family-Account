@@ -6,61 +6,53 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
 
-@Entity
-@Table(name="User")
+@Entity 
+@Table(name = "tb_user")
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID", nullable=false, length=5000)
+	@Column(name="user_id")
 	private Long id;
 	
-	@Column(name="Name", nullable=false, length=60)
+	@Column(name="user_name")
 	private String name;
 	
-	@Column(name="Kinship", nullable=false, length=60)
-	private Kinship kinship;
-	
-	@Column(name="Age", nullable=false, length=3)
+	@Column(name="user_age")
 	private Integer age;
 	
-	@Column(name="CPF", nullable=false, length=15)
+	@Column(name="CPF")
 	private String cpf;
 	
-	@Column(name="Cell", nullable=false, length=40)
-	private Integer cell;
+	@Column(name="user_cell")
+	private Double cell;
 	
-	@Column(name="e-mail", nullable=false, length=75)
+	@Column(name="user_email")
 	private String email;
 	
-	@Column(name="Address", nullable=false, length=100)
+	@Column(name="user_address")
 	private String address;
 	
-	@Column(name="Marital Status", nullable=false, length=30)
+	@Column(name="user_MaritalStatus")
 	private String maritalStatus;
 	
 	public User() {
 	}
 
-	public User(String name, Kinship kinship, Integer age, String Cpf, Integer cell, String email, String address,
+	public User(String name, Integer age, String Cpf, Double cell, String email, String address,
 			String maritalStatus) {
 		super();
 		this.name = name;
-		this.kinship = kinship;
 		this.age = age;
 		cpf = Cpf;
 		this.cell = cell;
 		this.email = email;
 		this.address = address;
 		this.maritalStatus = maritalStatus;
-	}
-
-	public Kinship getKinship() {
-		return kinship;
 	}
 
 	public Integer getAge() {
@@ -71,11 +63,11 @@ public class User {
 		this.age = age;
 	}
 
-	public Integer getCell() {
+	public Double getCell() {
 		return cell;
 	}
 
-	public void setCell(Integer cell) {
+	public void setCell(Double cell) {
 		this.cell = cell;
 	}
 
@@ -131,7 +123,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", kinship=" + kinship + ", age=" + age + ", cpf=" + cpf + ", cell=" + cell
+		return "User [name=" + name + ", age=" + age + ", cpf=" + cpf + ", cell=" + cell
 				+ ", email=" + email + ", address=" + address + ", maritalStatus=" + maritalStatus + "]";
 	}
 	
